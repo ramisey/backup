@@ -60,13 +60,7 @@ jobs:
           
       - name: Update packages
         run: |
-          cd package
-          mkdir openwrt-packages
-          cd openwrt-packages
-          git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
-          git clone https://github.com/rosywrt/luci-theme-rosy.git
-          git clone https://github.com/vernesong/OpenClash.git
-          git clone https://github.com/Lienol/openwrt-package/tree/master/lienol/luci-app-passwall.git
+           git clone https://github.com/frainzy1477/luci-app-clash.git openwrt/package/luci-app-clash
      
           
       - name: Update feeds
