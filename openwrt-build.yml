@@ -60,7 +60,10 @@ jobs:
           
       - name: Update packages
         run: |
-           git clone https://github.com/frainzy1477/luci-app-clash.git openwrt/package/luci-app-clash
+           git clone https://github.com/vernesong/OpenClash.git openwrt/package/luci-app-openclash
+           git clone https://github.com/Leo-Jo-My/luci-theme-opentomcat.git openwrt/package/luci-theme-opentomcat
+           svn co --force https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-ipsec-vpnd package/lean/luci-app-ipsec-vpnd   && svn revert -R package/lean/luci-app-ipsec-vpnd
+          
      
           
       - name: Update feeds
