@@ -1,0 +1,4 @@
+ name: Update packages
+      run: |
+          git clone https://github.com/vernesong/OpenClash.git openwrt/package/luci-app-openclash
+          svn co --force https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-ipsec-vpnd package/lean/luci-app-ipsec-vpnd   && svn revert -R package/lean/luci-app-ipsec-vpnd 
