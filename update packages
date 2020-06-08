@@ -1,5 +1,6 @@
  name: Update packages
       run: |
-          git clone https://github.com/skywalkker/passwall.git  openwrt/package/luci-app-passwall
-          git clone  -b master https://github.com/vernesong/OpenClash.git  openwrt/package/luci-app-openclash
+          cd openwrt
+          git clone https://github.com/skywalkker/passwall.git  
+          git clone  -b master https://github.com/vernesong/OpenClash.git  
           svn co --force https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-ipsec-vpnd package/lean/luci-app-ipsec-vpnd   && svn revert -R package/lean/luci-app-ipsec-vpnd 
