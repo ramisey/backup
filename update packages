@@ -3,5 +3,6 @@
           
           git clone https://github.com/skywalkker/passwall.git  package/luci-app-passwall
           git clone  -b master https://github.com/vernesong/OpenClash.git   package/luci-app-openclash
-          svn co --force https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-ipsec-vpnd package/lean/luci-app-ipsec-vpnd   && svn revert -R package/lean/luci-app-ipsec-vpnd
-          svn co --force https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-adbyby-plus package/lean/luci-app-adbyby-plus   && svn revert -R package/lean/luci-app-adbyby-plus 
+          svn co --force https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-ipsec-vpnd package/luci-app-ipsec-vpnd   && svn revert -R package/luci-app-ipsec-vpnd
+          svn co --force https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-adbyby-plus package/luci-app-adbyby-plus   && svn revert -R package/luci-app-adbyby-plus 
+          svn co --force https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-vlmcsd package/luci-app-vlmcsd   && svn revert -R package/luci-app-vlmcsd
