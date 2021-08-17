@@ -1,5 +1,3 @@
-
-
 ||amazon.com
 ||google.com
 ||google*.com
@@ -16,15 +14,48 @@
 ||blogspot.com
 ||youtu.be
 ||whatsapp.com
+
 ||disney.com
 ||disney*.com
+||adobedtm.com
+||bam.nr-date.net
+||bamgrid.com
+||braze.com
+||cdn.optimizely.com
+||cdn.registerdisney.go.com
+||cws.conviva.com
+||d9.flashtalking.com
+||disney.demdex.net
+||disney.my.sentry.io
+||disneyplus.bn5x.net
+||disneyplus.com
+||disneyplus.com.ssl.sc.omtrdc.net
+||disney-plus.net
+||disney-portal.my.onetrust.com
+||dssott.com
+||execute-api.us-east-1.amazonaws.com
+||js-agent.newrelic.com
+
 
 ||netflix.com
+||fast.com
+||netflix.com.edgesuite.net
 ||netflix.net
-||nflximg.net
-||nflxvideo.net
-||nflxso.net
+||netflixdnstest0.com
+||netflixdnstest1.com
+||netflixdnstest2.com
+||netflixdnstest3.com
+||netflixdnstest4.com
+||netflixdnstest5.com
+||netflixdnstest6.com
+||netflixdnstest7.com
+||netflixdnstest8.com
+||netflixdnstest9.com
 ||nflxext.com
+||nflximg.com
+||nflximg.net
+||nflxso.net
+||nflxvideo.net
 
 
 ||paypal.com
