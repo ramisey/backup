@@ -1,4 +1,3 @@
-
 mode: rule
 ipv6: true
 log-level: info
