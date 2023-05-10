@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>FreshRSS</title>
+    <dateCreated>Wed, 08 Feb 2023 11:05:57</dateCreated>
+  </head>
+  <body>
+    <outline text="我的订阅">
+      <outline text="Foreign Policy" type="rss" xmlUrl="https://api.earendal.win/foreignpolicy.com/feed/" htmlUrl="https://foreignpolicy.com/" description="the Global Magazine of News and Ideas"/>
+      <outline text="Harvard Business Review" type="rss" xmlUrl="https://feedx.net/rss/hbr.xml" htmlUrl="https://hbr.org/" description="Harvard Business Review全文RSS。获取更多全文RSS：https://feedx.net"/>
+      <outline text="MIT Technology Review" type="rss" xmlUrl="https://www.technologyreview.com/stories.rss" htmlUrl="https://www.technologyreview.com/" description=""/>
+      <outline text="NASA APOD Bridge" type="rss" xmlUrl="https://hub.earendal.win/?action=display&amp;bridge=NasaApod&amp;format=Atom" htmlUrl="https://apod.nasa.gov/apod/" description=""/>
+      <outline text="National Geographic" type="rss" xmlUrl="https://hub.earendal.win/?action=display&amp;bridge=NationalGeographicBridge&amp;context=By+Topic&amp;topic=latest-stories&amp;full=on&amp;format=Atom" htmlUrl="https://www.nationalgeographic.com/latest-stories" description=""/>
+      <outline text="Reuters Business News" type="rss" xmlUrl="https://www.earendal.win/reuters/business" htmlUrl="https://www.reuters.com/business/" description="Find latest business news from every corner of the globe at Reuters.com, your online source for breaking international news coverage. - Made with love by RSSHub(https://github.com/DIYgod/RSSHub)"/>
+      <outline text="Scientific American" type="rss" xmlUrl="https://api.earendal.win/rss.sciam.com/ScientificAmerican-Global" htmlUrl="http://www.scientificamerican.com/" description="Science news and technology updates from Scientific American"/>
+      <outline text="The Hacker News" type="rss" xmlUrl="https://hub.earendal.win/?action=display&amp;bridge=TheHackerNews&amp;format=Atom" htmlUrl="https://thehackernews.com/" description=""/>
+      <outline text="The Wall Street Journal" type="rss" xmlUrl="https://feedx.net/rss/wsjen.xml" htmlUrl="https://www.wsj.com" description="The Wall Street Journal全文RSS。获取更多全文RSS：https://feedx.net"/>
+      <outline text="华尔街日报" type="rss" xmlUrl="https://feedx.net/rss/wsj.xml" htmlUrl="https://www.wsj.com" description="华尔街日报全文RSS。获取更多全文RSS：https://feedx.net"/>
+      <outline text="华尔街见闻" type="rss" xmlUrl="https://www.earendal.win/wallstreetcn/global" htmlUrl="https://wallstreetcn.com/news/global" description="华尔街见闻 - 资讯 - 最新 - Made with love by RSSHub(https://github.com/DIYgod/RSSHub)"/>
+      <outline text="田间小站" type="rss" xmlUrl="https://feedx.net/rss/tjxz.xml" htmlUrl="http://tjxz.cc" description="田间小站全文RSS。获取更多全文RSS：https://feedx.net"/>
+      <outline text="纽约时报中文网" type="rss" xmlUrl="https://api.earendal.win/cn.nytimes.com/rss/" htmlUrl="https://cn.nytimes.com/" description="纽约时报中文网 国际纵览"/>
+      <outline text="美国之音" type="rss" xmlUrl="https://feedx.net/rss/mgzy1.xml" htmlUrl="http://voanews.com/" description="美国之音全文RSS。获取更多全文RSS：https://feedx.net"/>
+      <outline text="虎嗅" type="rss" xmlUrl="https://feedx.net/rss/huxiu.xml" htmlUrl="https://www.huxiu.com/" description="虎嗅全文RSS。获取更多全文RSS：https://feedx.net"/>
+      <outline text="议报" type="rss" xmlUrl="https://yibaochina.com/?feed=rss2" htmlUrl="https://yibaochina.com" description="Yibao Online Publication"/>
+      <outline text="豆瓣电影本周口碑榜" type="rss" xmlUrl="https://feedx.net/rss/doubanmvweek.xml" htmlUrl="https://www.douban.com/" description="豆瓣电影本周口碑榜全文RSS。获取更多全文RSS：https://feedx.net"/>
+    </outline>
+  </body>
+</opml>
