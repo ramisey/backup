@@ -1,0 +1,58 @@
+
+port: 7890
+socks-port: 7891
+redir-port: 7892
+allow-lan: false
+mode: Rule
+log-level: warning
+external-controller: 127.0.0.1:9090
+secret: "123456"
+proxies:
+  - name: "v2ray"
+    type: vmess
+    server: domain.com
+    port: 443
+    uuid: uuid
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls:  true
+    network: ws
+    skip-cert-verify: true
+    ws-opts:
+        path: /your-ws-path
+        headers:
+            Host: domain.com
+
+  - name: "trojan-ws"
+    type: trojan
+    server: 8.8.9.9
+    port: 443
+    password: "password"
+    network: ws
+    sni: bbs.domain.com
+    skip-cert-verify: true
+    udp: true
+    ws-opts:
+        path: /your-ws-path
+        headers:
+            Host: bbs.domain.com
+proxy-groups:
+  - name: Auto - UrlTest
+    type: url-test
+    proxies:
+      - "v2ray"
+      - "trojan-ws"
+    url: https://cp.cloudflare.com/generate_204
+    interval: "600"
+    tolerance: "150"
+  - name: Proxy
+    type: select
+    proxies:
+      - Auto - UrlTest
+      - DIRECT
+      - "v2ray"
+      - "trojan-ws"
+rules:
+- GEOIP,CN,DIRECT
+- MATCH,Proxy
