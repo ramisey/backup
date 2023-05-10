@@ -1,0 +1,186 @@
+
+mode: rule
+ipv6: true
+log-level: info
+allow-lan: true
+mixed-port: 7890
+unified-delay: false
+tcp-concurrent: true
+
+external-controller: 0.0.0.0:9090
+#external-ui: ui
+secret: ""
+
+geodata-mode: true
+geox-url:
+  geoip: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
+  geosite: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
+  mmdb: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb"
+
+find-process-mode: strict
+global-client-fingerprint: chrome
+
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+sniffer:
+  enable: true
+  sniff:
+    TLS:
+      ports: [443, 8443]
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+
+tun:
+  enable: true
+  stack: system
+  dns-hijack:
+    - 'any:53'
+  auto-route: true
+  auto-detect-interface: true
+
+dns:
+  enable: true
+  listen: :1053
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 28.0.0.1/8
+  fake-ip-filter:
+    - '*'
+    - '+.lan'
+  default-nameserver:
+    - 223.5.5.5
+  nameserver:
+    - 'tls://8.8.4.4#dns'
+    - 'tls://1.0.0.1#dns'
+  proxy-server-nameserver:
+    - https://doh.pub/dns-query
+  nameserver-policy:
+    "geosite:cn,private":
+      - https://doh.pub/dns-query
+      - https://dns.alidns.com/dns-query
+
+proxies: 
+  - name: "ss4-shadow-tls"
+    type: ss
+    server: server
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: "password"
+    plugin: shadow-tls
+    client-fingerprint: chrome
+    plugin-opts:
+      host: "cloud.tencent.com"
+      password: "shadow_tls_password"
+      version: 2 # support 1/2/3
+      
+  - name: "v2ray"
+        type: vmess
+        server: domain.com
+        port: 443
+        uuid: uuid
+        alterId: 0
+        cipher: auto
+        udp: true
+        tls:  true
+        network: ws
+        skip-cert-verify: true
+        ws-opts:
+            path: /your-ws-path
+            headers:
+                Host: domain.com
+    
+  - name: "trojan-ws"
+        type: trojan
+        server: 8.8.9.9
+        port: 443
+        password: "password"
+        network: ws
+        sni: bbs.domain.com
+        skip-cert-verify: true
+        udp: true
+        ws-opts:
+            path: /your-ws-path
+            headers:
+                Host: bbs.domain.com
+  
+   
+  - name: "vless-vision"
+      type: vless
+      server: server
+      port: 443
+      uuid: uuid
+      network: tcp
+      tls: true
+      udp: true
+      flow: xtls-rprx-vision
+      client-fingerprint: chrome
+      # fingerprint: xxxx
+      # skip-cert-verify: true
+
+
+proxy-groups:
+        type: url-test
+        proxies:
+          - ss1
+          - ss2
+          - vmess1
+        # tolerance: 150
+        # lazy: true
+        url: "https://cp.cloudflare.com/generate_204"
+        interval: 300
+      
+      # fallback 将按照 url 测试结果按照节点顺序选择
+      - name: "fallback-auto"
+        type: fallback
+        proxies:
+          - ss1
+          - ss2
+          - vmess1
+        url: "https://cp.cloudflare.com/generate_204"
+        interval: 300
+      
+      # load-balance 将按照算法随机选择节点
+      - name: "load-balance"
+        type: load-balance
+        proxies:
+          - ss1
+          - ss2
+          - vmess1
+        url: "https://cp.cloudflare.com/generate_204"
+        interval: 300
+      # strategy: consistent-hashing # 可选 round-robin 和 sticky-sessions
+      
+      # select 用户自行选择节点
+      - name: Proxy
+        type: select
+        # disable-udp: true
+        proxies:
+          - ss1
+          - ss2
+          - vmess1
+          - auto
+      
+rules:
+  - GEOSITE,biliintl, 哔哩东南亚
+  - GEOSITE,ehentai,ehentai
+  - GEOSITE,github,github
+  - GEOSITE,twitter,Twitter
+  - GEOSITE,youtube,YouTube
+  - GEOSITE,google,Google
+  - GEOSITE,telegram,Telegram
+  - GEOSITE,netflix,NETFLIX
+  - GEOSITE,bilibili,哔哩哔哩
+  - GEOSITE,bahamut,巴哈姆特
+  - GEOSITE,spotify,Spotify
+  - GEOSITE,geolocation-!cn,其他
+
+  - GEOIP,google,Google
+  - GEOIP,netflix,NETFLIX
+  - GEOIP,telegram,Telegram
+  - GEOIP,twitter,Twitter
+  - GEOSITE,CN,国内
+  - GEOIP,CN,国内
+  - MATCH,其他
