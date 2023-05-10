@@ -154,19 +154,7 @@ proxy-groups:
           - trojan
     url: "https://cp.cloudflare.com/generate_204"
     interval: 300
-      
-      # load-balance 将按照算法随机选择节点
-  - name: "load-balance"
-    type: load-balance
-    proxies:
-          - shadow-tls
-          - v2ray
-          - xray
-          - trojan
-    url: "https://cp.cloudflare.com/generate_204"
-    interval: 300
-      
-      
+
 rules:
 - GEOIP,CN,DIRECT
 - GEOSITE,CN,DIRECT
