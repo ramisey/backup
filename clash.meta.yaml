@@ -67,7 +67,7 @@ proxies:
     type: vmess
     server: earendal.win
     port: 443
-    uuid: 955e919f-b4c5-4997-be7a-5e82b81b8ee8
+    uuid: 955e919f-b4c5-4997-be7a-5e82b81b
     alterId: 0
     cipher: auto
     udp: true
@@ -75,7 +75,7 @@ proxies:
     network: ws
     skip-cert-verify: true
     ws-opts:
-            path: /rawxyztkma
+            path: /rawxyz
             headers:
                 Host: earendal.win
     
@@ -89,7 +89,7 @@ proxies:
     skip-cert-verify: true
     udp: true
     ws-opts:
-            path: /rawxyztkma
+            path: /rawxyz
             headers:
                 Host: bbs.earendal.win
      
@@ -97,7 +97,7 @@ proxies:
     type: vless
     server: free.earendal.win
     port: 443
-    uuid: 955e919f-b4c5-4997-be7a-5e82b81b8ee8
+    uuid: 955e919f-b4c5-4997-be7a-5e82b81b
     network: tcp
     tls: true
     udp: true
