@@ -83,7 +83,7 @@ proxies:
     type: trojan
     server: bbs.earendal.win
     port: 443
-    password: "passwordtrojan"
+    password: "password"
     network: ws
     sni: bbs.earendal.win
     skip-cert-verify: true
