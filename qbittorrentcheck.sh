@@ -6,7 +6,7 @@ echo $processID
 # 判断$processID为空,此处意思为如果$processID为空，那么重启
 if [ -z "$processID" ]
 then
-    # 启动运费qbittorrent程序
+    # 启动qbittorrent程序
     echo "qbittorrent程序未运行, 重新启动中..."
     bash /opt/etc/init.d/S89qbittorrent start
     echo "qbittorrent程序重启成功..."
