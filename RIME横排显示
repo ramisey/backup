@@ -1,0 +1,10 @@
+#windows：用户目录下编辑weasel.custom.yaml文件，加入以下内容：
+patch:
+  "style/horizontal": true
+  "style/inline_preedit": true  #单行显示
+
+#linux：ibus-rime框架下，在 ~/.config/ibus/rime/build/ 内新建 ibus_rime.yaml 并加入下面的内容
+style:
+  horizontal: true
+
+#linux：fcitx5-rime框架下，默认横排
