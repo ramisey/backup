@@ -31,8 +31,12 @@ dns:
   ratelimit_whitelist: []
   refuse_any: true
   upstream_dns:
-  - '#配合passwall等翻墙插件以便于根据规则进行分流解析'
+  - '#配合passwall、ShadowSocksR Plus+等插件使用'
   - 127.0.0.1
+  
+  - '#配合openlash插件使用'
+  - '#127.0.0.1:7874'
+  
   - '#防污染解析'
   - '#tls://dns.pub'
   - '#https://dns.pub/dns-query'
@@ -106,14 +110,23 @@ filters:
   url: https://anti-ad.net/easylist.txt
   name: Anti-AD
   id: 1605053864
+- enabled: true
+    url: http://sub.adtchrome.com/adt-chinalist-easylist.txt
+    name: 广告终结者使用的拦截规则，基于ChinaList+EasyList修正维护
+    id: 139789181
+- enabled: true
+    url: https://easylist-downloads.adblockplus.org/easylist.txt
+    name: EasyList-去除国际网页中大多数广告，包括不需要的框架、图像和对象
+    id: 139789112
+- enabled: true
+    url: https://raw.iqiq.io/banbendalao/ADgk/master/kill-baidu-ad.txt
+    name: ADgk百度广告过滤
+    id: 139789133
 whitelist_filters: []
 user_rules:
 - '||mgtv.com^'
 - '||360.com^'
 - '||360.cn^'
-- '#||xiaomi.com^'
-- '#||mi.com^'
-- '#||miui.com^'
 dhcp:
   enabled: false
   interface_name: ""
