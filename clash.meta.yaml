@@ -9,7 +9,7 @@ tcp-concurrent: true
 
 external-controller: 0.0.0.0:9090
 #external-ui: ui
-secret: ""
+secret: "123456"
 
 geodata-mode: true
 geox-url:
