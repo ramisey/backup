@@ -105,7 +105,17 @@ proxies:
     client-fingerprint: chrome
       # fingerprint: xxxx
       # skip-cert-verify: true
-
+  - name: tuic
+    server: quic.earendal.win
+    port: 10443
+    type: tuic
+    uuid: 955e919f-b4c5-4997-be7a-5e82b81b
+    password: password
+    disable-sni: true
+    reduce-rtt: true
+    request-timeout: 8000
+    udp-relay-mode: native 
+    congestion-controller: bbr 
 
 proxy-groups:
   - name: Auto
@@ -114,6 +124,7 @@ proxy-groups:
           - v2ray
           - xray
           - trojan
+          - tuic
     url: https://cp.cloudflare.com/generate_204
     interval: "600"
     tolerance: "150"
@@ -127,6 +138,7 @@ proxy-groups:
       - v2ray
       - xray
       - trojan
+      - tuic
 
       # fallback 将按照 url 测试结果按照节点顺序选择
   - name: "fallback-auto"
@@ -135,6 +147,7 @@ proxy-groups:
           - v2ray
           - xray
           - trojan
+          -tuic
     url: "https://cp.cloudflare.com/generate_204"
     interval: 300
 
