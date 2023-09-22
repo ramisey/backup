@@ -8,6 +8,7 @@ unified-delay: false
 tcp-concurrent: true
 
 external-controller: 0.0.0.0:9090
+#clash-dashboard下载:https://github.com/Dreamacro/clash-dashboard/tree/gh-pages
 #external-ui: /etc/clash-dashboard （linux）或 F:\clash\clash-dashboard （windows）
 secret: "123456"
 
