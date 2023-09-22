@@ -8,7 +8,7 @@ unified-delay: false
 tcp-concurrent: true
 
 external-controller: 0.0.0.0:9090
-#external-ui: ui
+#external-ui: /opt/clash-dashboard
 secret: "123456"
 
 geodata-mode: true
@@ -34,7 +34,7 @@ sniffer:
       override-destination: true
 
 tun:
-  enable: true
+  enable: false
   stack: system
   dns-hijack:
     - 'any:53'
