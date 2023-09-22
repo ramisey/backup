@@ -105,7 +105,7 @@ proxies:
     client-fingerprint: chrome
       # fingerprint: xxxx
       # skip-cert-verify: true
-  - name: tuic
+  - name: "tuic"
     server: quic.earendal.win
     port: 10443
     type: tuic
@@ -121,10 +121,10 @@ proxy-groups:
   - name: Auto
     type: url-test
     proxies:
-          - v2ray
           - xray
-          - trojan
           - tuic
+          - trojan
+          - v2ray
     url: https://cp.cloudflare.com/generate_204
     interval: "600"
     tolerance: "150"
@@ -135,10 +135,10 @@ proxy-groups:
     proxies:
       - Auto
       - DIRECT
-      - v2ray
       - xray
-      - trojan
       - tuic
+      - trojan
+      - v2ray
 
 rules:
 - GEOSITE, CN, DIRECT
