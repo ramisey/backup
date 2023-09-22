@@ -8,7 +8,7 @@ unified-delay: false
 tcp-concurrent: true
 
 external-controller: 0.0.0.0:9090
-#external-ui: /etc/clash-dashboard
+#external-ui: /etc/clash-dashboard （linux）或 F:\clash\clash-dashboard （windows）
 secret: "123456"
 
 geodata-mode: true
@@ -139,17 +139,6 @@ proxy-groups:
       - xray
       - trojan
       - tuic
-
-      # fallback 将按照 url 测试结果按照节点顺序选择
-  - name: "fallback-auto"
-    type: fallback
-    proxies:
-          - v2ray
-          - xray
-          - trojan
-          -tuic
-    url: "https://cp.cloudflare.com/generate_204"
-    interval: 300
 
 rules:
 - GEOSITE, CN, DIRECT
