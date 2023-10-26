@@ -1,0 +1,10 @@
+enabled_bridges[] = Economist
+enabled_bridges[] = NYT
+enabled_bridges[] = NasaApod
+enabled_bridges[] = NationalGeographic
+enabled_bridges[] = ScientificAmerican
+enabled_bridges[] = Spotify
+enabled_bridges[] = TheHackerNews
+enabled_bridges[] = TheGuardian
+enabled_bridges[] = AssociatedPressNews
+enabled_bridges[] = Reuters
