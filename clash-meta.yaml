@@ -8,8 +8,8 @@ unified-delay: false
 tcp-concurrent: true
 
 external-controller: 0.0.0.0:9090
-external-ui: F:\clash\clash-dashboard
-secret: "1234569"
+#external-ui: F:\clash\clash-dashboard
+secret: "123456"
 
 geodata-mode: true
 geox-url:
