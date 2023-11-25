@@ -1,4 +1,7 @@
 http:
+  pprof:
+    port: 6060
+    enabled: false
   address: 0.0.0.0:3000
   session_ttl: 720h
 users:
@@ -9,28 +12,20 @@ block_auth_min: 15
 http_proxy: ""
 language: zh-cn
 theme: auto
-debug_pprof: false
 dns:
   bind_hosts:
     - 0.0.0.0
   port: 52
   anonymize_client_ip: false
-  protection_enabled: true
-  blocking_mode: nxdomain
-  blocking_ipv4: ""
-  blocking_ipv6: ""
-  blocked_response_ttl: 10
-  protection_disabled_until: null
-  parental_block_host: family-block.dns.adguard.com
-  safebrowsing_block_host: standard-block.dns.adguard.com
   ratelimit: 0
+  ratelimit_subnet_len_ipv4: 24
+  ratelimit_subnet_len_ipv6: 56
   ratelimit_whitelist: []
   refuse_any: true
   upstream_dns:
-    - '#配合passwall、ShadowSocksR Plus+等插件使用'
-    - 127.0.0.1
-    - '#配合openlash插件使用'
-    - '#127.0.0.1:7874'
+    - '# MosDNS 配合passwall、openclash等插件使用'
+    - 127.0.0.1:5335
+
     - '#防污染解析'
     - '#tls://dns.pub'
     - '#https://dns.pub/dns-query'
@@ -46,6 +41,7 @@ dns:
     - 119.29.29.29
     - 223.5.5.5
     - 8.8.8.8
+  fallback_dns: []
   all_servers: true
   fastest_addr: false
   fastest_timeout: 1s
@@ -74,27 +70,6 @@ dns:
   ipset: []
   ipset_file: ""
   bootstrap_prefer_ipv6: false
-  filtering_enabled: true
-  filters_update_interval: 24
-  parental_enabled: true
-  safebrowsing_enabled: false
-  safebrowsing_cache_size: 1048576
-  safesearch_cache_size: 1048576
-  parental_cache_size: 1048576
-  cache_time: 30
-  safe_search:
-    enabled: false
-    bing: true
-    duckduckgo: true
-    google: true
-    pixabay: true
-    yandex: true
-    youtube: true
-  rewrites: []
-  blocked_services:
-    schedule:
-      time_zone: UTC
-    ids: []
   upstream_timeout: 10s
   private_networks: []
   use_private_ptr_resolvers: true
@@ -159,6 +134,36 @@ dhcp:
     lease_duration: 86400
     ra_slaac_only: false
     ra_allow_slaac: false
+filtering:
+  blocking_ipv4: ""
+  blocking_ipv6: ""
+  blocked_services:
+    schedule:
+      time_zone: UTC
+    ids: []
+  protection_disabled_until: null
+  safe_search:
+    enabled: false
+    bing: true
+    duckduckgo: true
+    google: true
+    pixabay: true
+    yandex: true
+    youtube: true
+  blocking_mode: nxdomain
+  parental_block_host: family-block.dns.adguard.com
+  safebrowsing_block_host: standard-block.dns.adguard.com
+  rewrites: []
+  safebrowsing_cache_size: 1048576
+  safesearch_cache_size: 1048576
+  parental_cache_size: 1048576
+  cache_time: 30
+  filters_update_interval: 24
+  blocked_response_ttl: 10
+  filtering_enabled: true
+  parental_enabled: false
+  safebrowsing_enabled: false
+  protection_enabled: true
 clients:
   runtime_sources:
     whois: true
@@ -179,4 +184,4 @@ os:
   group: ""
   user: ""
   rlimit_nofile: 0
-schema_version: 24
+schema_version: 27
