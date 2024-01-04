@@ -105,8 +105,8 @@
       "type": "vless",
       "tag": "vless-sb",
       "server": "149.248.14.230",
-      "server_port": 50459,
-      "uuid": "7160babf-b582-4dc0-afd0-aa6213cc04a8",
+      "server_port": 62056,
+      "uuid": "70a243ed-ad08-43c8-93af-5a0fda7b3eb0",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -117,18 +117,18 @@
         },
       "reality": {
           "enabled": true,
-          "public_key": "FRCRqZpBQOIh9VxH7jgeTaQXzZbd7ITBNixC5inQ0lA",
-          "short_id": "c1a51b82"
+          "public_key": "8HaisjG9qtVTCq6j27vmSaCqAHajME62PNWZKn90-3M",
+          "short_id": "51857e82"
         }
       }
     },
 {
-            "server": "149.248.14.230",
-            "server_port": 8080,
+            "server": "sing.earendal.win",
+            "server_port": 2087,
             "tag": "vmess-sb",
             "tls": {
-                "enabled": false,
-                "server_name": "www.bing.com",
+                "enabled": true,
+                "server_name": "sing.earendal.win",
                 "insecure": false,
                 "utls": {
                     "enabled": true,
@@ -138,26 +138,26 @@
             "transport": {
                 "headers": {
                     "Host": [
-                        "www.bing.com"
+                        "sing.earendal.win"
                     ]
                 },
-                "path": "7160babf-b582-4dc0-afd0-aa6213cc04a8-vm",
+                "path": "70a243ed-ad08-43c8-93af-5a0fda7b3eb0-vm",
                 "type": "ws"
             },
             "type": "vmess",
             "security": "auto",
-            "uuid": "7160babf-b582-4dc0-afd0-aa6213cc04a8"
+            "uuid": "70a243ed-ad08-43c8-93af-5a0fda7b3eb0"
         },
     {
         "type": "hysteria2",
         "tag": "hy2-sb",
-        "server": "149.248.14.230",
-        "server_port": 51336,
-        "password": "7160babf-b582-4dc0-afd0-aa6213cc04a8",
+        "server": "sing.earendal.win",
+        "server_port": 54402,
+        "password": "70a243ed-ad08-43c8-93af-5a0fda7b3eb0",
         "tls": {
             "enabled": true,
-            "server_name": "www.bing.com",
-            "insecure": true,
+            "server_name": "sing.earendal.win",
+            "insecure": false,
             "alpn": [
                 "h3"
             ]
@@ -166,10 +166,10 @@
         {
             "type":"tuic",
             "tag": "tuic5-sb",
-            "server": "149.248.14.230",
-            "server_port": 60641,
-            "uuid": "7160babf-b582-4dc0-afd0-aa6213cc04a8",
-            "password": "7160babf-b582-4dc0-afd0-aa6213cc04a8",
+            "server": "sing.earendal.win",
+            "server_port": 54082,
+            "uuid": "70a243ed-ad08-43c8-93af-5a0fda7b3eb0",
+            "password": "70a243ed-ad08-43c8-93af-5a0fda7b3eb0",
             "congestion_control": "bbr",
             "udp_relay_mode": "native",
             "udp_over_stream": false,
@@ -177,8 +177,8 @@
             "heartbeat": "10s",
             "tls":{
                 "enabled": true,
-                "server_name": "www.bing.com",
-                "insecure": true,
+                "server_name": "sing.earendal.win",
+                "insecure": false,
                 "alpn": [
                     "h3"
                 ]
