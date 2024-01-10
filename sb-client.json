@@ -114,7 +114,7 @@
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
-        },
+        }
       }
     },
 {
