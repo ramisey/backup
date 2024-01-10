@@ -105,7 +105,7 @@
       "type": "vless",
       "tag": "vless-sb",
       "server": "sing.earendal.win",
-      "server_port": 10248,
+      "server_port": 62056,
       "uuid": "70a243ed-ad08-43c8-93af-5a0fda7b3eb0",
       "flow": "xtls-rprx-vision",
       "tls": {
@@ -115,7 +115,7 @@
           "enabled": true,
           "fingerprint": "chrome"
         }
-      
+      }
     },
 {
             "server": "sing.earendal.win",
