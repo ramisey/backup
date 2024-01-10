@@ -104,22 +104,17 @@
     {
       "type": "vless",
       "tag": "vless-sb",
-      "server": "149.248.14.230",
-      "server_port": 62056,
+      "server": "sing.earendal.win",
+      "server_port": 10248,
       "uuid": "70a243ed-ad08-43c8-93af-5a0fda7b3eb0",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
-        "server_name": "www.yahoo.com",
+        "server_name": "sing.earendal.win",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
         },
-      "reality": {
-          "enabled": true,
-          "public_key": "8HaisjG9qtVTCq6j27vmSaCqAHajME62PNWZKn90-3M",
-          "short_id": "51857e82"
-        }
       }
     },
 {
