@@ -81,11 +81,9 @@
       "external_ui": "ui",
       "external_ui_download_url": "",
       "external_ui_download_detour": "",
-      "secret": "",
       "default_mode": "Rule",
-      "store_mode": true,
-      "store_selected": true,
-      "store_fakeip": true
+      "secret": "1234567"
+
     }
   },
   "outbounds": [
@@ -105,7 +103,7 @@
       "type": "vless",
       "tag": "vless-sb",
       "server": "sing.earendal.win",
-      "server_port": 10248,
+      "server_port": 62056,
       "uuid": "70a243ed-ad08-43c8-93af-5a0fda7b3eb0",
       "flow": "xtls-rprx-vision",
       "tls": {
