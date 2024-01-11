@@ -103,7 +103,7 @@
       "type": "vless",
       "tag": "vless-sb",
       "server": "sing.earendal.win",
-      "server_port": 62056,
+      "server_port": 10248,
       "uuid": "70a243ed-ad08-43c8-93af-5a0fda7b3eb0",
       "flow": "xtls-rprx-vision",
       "tls": {
@@ -206,11 +206,11 @@
   ],
   "route": {
       "geoip": {
-      "download_url": "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.db",
+      "download_url": "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.db",
       "download_detour": "select"
     },
     "geosite": {
-      "download_url": "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.db",
+      "download_url": "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.db",
       "download_detour": "select"
     },
     "auto_detect_interface": true,
