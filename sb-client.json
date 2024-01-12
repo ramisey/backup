@@ -4,20 +4,35 @@
     "level": "info",
     "timestamp": true
   },
+  "experimental": {
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090",
+      "external_ui": "ui",
+      "external_ui_download_url": "",
+      "external_ui_download_detour": "",
+      "secret": "",
+      "default_mode": "Rule"
+       },
+      "cache_file": {
+            "enabled": true,
+            "path": "cache.db",
+            "store_fakeip": true
+        }
+    },
     "dns": {
         "servers": [
             {
-                "tag": "remote",
+                "tag": "proxydns",
                 "address": "https://8.8.8.8/dns-query",             
                 "detour": "select"
             },
             {
-                "tag": "local",
+                "tag": "localdns",
                 "address": "h3://223.5.5.5/dns-query",
                 "detour": "direct"
             },
             {
-                "address": "rcode://success",
+                "address": "rcode://refused",
                 "tag": "block"
             },
             {
@@ -28,27 +43,27 @@
         "rules": [
             {
                 "outbound": "any",
-                "server": "local",
+                "server": "localdns",
                 "disable_cache": true
             },
             {
                 "clash_mode": "Global",
-                "server": "remote"
+                "server": "proxydns"
             },
             {
                 "clash_mode": "Direct",
-                "server": "local"
+                "server": "localdns"
             },
             {
-                "geosite": "cn",
-                "server": "local"
+                "rule_set": "geosite-cn",
+                "server": "localdns"
             },
             {
-                "geosite": "geolocation-!cn",
-                "server": "remote"
+                 "rule_set": "geosite-geolocation-!cn",
+                 "server": "proxydns"
             },
              {
-                "geosite": "geolocation-!cn",             
+                "rule_set": "geosite-geolocation-!cn",         
                 "query_type": [
                     "A",
                     "AAAA"
@@ -62,7 +77,7 @@
            "inet6_range": "fc00::/18"
          },
           "independent_cache": true,
-          "final": "remote"
+          "final": "proxydns"
         },
       "inbounds": [
     {
@@ -71,21 +86,9 @@
       "inet6_address": "fdfe:dcba:9876::1/126",
       "auto_route": true,
       "strict_route": true,
-      "stack": "mixed",
       "sniff": true
     }
   ],
-  "experimental": {
-    "clash_api": {
-      "external_controller": "127.0.0.1:9090",
-      "external_ui": "ui",
-      "external_ui_download_url": "",
-      "external_ui_download_detour": "",
-      "default_mode": "Rule",
-      "secret": "1234567"
-
-    }
-  },
   "outbounds": [
     {
       "tag": "select",
@@ -93,18 +96,18 @@
       "default": "auto",
       "outbounds": [
         "auto",
-        "vless-sb",
-        "vmess-sb",
-        "hy2-sb",
-        "tuic5-sb"
+        "vless-vultr",
+        "vmess-vultr",
+        "hy2-vultr",
+        "tuic5-vultr"
       ]
     },
     {
       "type": "vless",
-      "tag": "vless-sb",
+      "tag": "vless-vultr",
       "server": "sing.earendal.win",
-      "server_port": 10248,
-      "uuid": "70a243ed-ad08-43c8-93af-5a0fda7b3eb0",
+      "server_port": 16544,
+      "uuid": "f8b8c801-3894-45a2-b1f6-d26a04189a70",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -117,10 +120,10 @@
     },
 {
             "server": "sing.earendal.win",
-            "server_port": 2087,
-            "tag": "vmess-sb",
+            "server_port": 2095,
+            "tag": "vmess-vultr",
             "tls": {
-                "enabled": true,
+                "enabled": false,
                 "server_name": "sing.earendal.win",
                 "insecure": false,
                 "utls": {
@@ -134,23 +137,23 @@
                         "sing.earendal.win"
                     ]
                 },
-                "path": "rawxyz",
+                "path": "f8b8c801-3894-45a2-b1f6-d26a04189a70-vm",
                 "type": "ws"
             },
             "type": "vmess",
             "security": "auto",
-            "uuid": "70a243ed-ad08-43c8-93af-5a0fda7b3eb0"
+            "uuid": "f8b8c801-3894-45a2-b1f6-d26a04189a70"
         },
     {
         "type": "hysteria2",
-        "tag": "hy2-sb",
+        "tag": "hy2-vultr",
         "server": "sing.earendal.win",
-        "server_port": 54402,
-        "password": "70a243ed-ad08-43c8-93af-5a0fda7b3eb0",
+        "server_port": 58378,
+        "password": "f8b8c801-3894-45a2-b1f6-d26a04189a70",
         "tls": {
             "enabled": true,
             "server_name": "sing.earendal.win",
-            "insecure": false,
+            "insecure": true,
             "alpn": [
                 "h3"
             ]
@@ -158,11 +161,11 @@
     },
         {
             "type":"tuic",
-            "tag": "tuic5-sb",
+            "tag": "tuic5-vultr",
             "server": "sing.earendal.win",
-            "server_port": 54082,
-            "uuid": "70a243ed-ad08-43c8-93af-5a0fda7b3eb0",
-            "password": "70a243ed-ad08-43c8-93af-5a0fda7b3eb0",
+            "server_port": 16680,
+            "uuid": "f8b8c801-3894-45a2-b1f6-d26a04189a70",
+            "password": "f8b8c801-3894-45a2-b1f6-d26a04189a70",
             "congestion_control": "bbr",
             "udp_relay_mode": "native",
             "udp_over_stream": false,
@@ -171,7 +174,7 @@
             "tls":{
                 "enabled": true,
                 "server_name": "sing.earendal.win",
-                "insecure": false,
+                "insecure": true,
                 "alpn": [
                     "h3"
                 ]
@@ -193,10 +196,10 @@
       "tag": "auto",
       "type": "urltest",
       "outbounds": [
-        "vless-sb",
-        "vmess-sb",
-        "hy2-sb",
-        "tuic5-sb"
+        "vless-vultr",
+        "vmess-vultr",
+        "hy2-vultr",
+        "tuic5-vultr"
       ],
       "url": "https://cp.cloudflare.com/generate_204",
       "interval": "1m",
@@ -205,14 +208,32 @@
     }
   ],
   "route": {
-      "geoip": {
-      "download_url": "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.db",
-      "download_detour": "select"
-    },
-    "geosite": {
-      "download_url": "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.db",
-      "download_detour": "select"
-    },
+      "rule_set": [
+            {
+                "tag": "geosite-geolocation-!cn",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-!cn.srs",
+                "download_detour": "select",
+                "update_interval": "1d"
+            },
+            {
+                "tag": "geosite-cn",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-cn.srs",
+                "download_detour": "select",
+                "update_interval": "1d"
+            },
+            {
+                "tag": "geoip-cn",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs",
+                "download_detour": "select",
+                "update_interval": "1d"
+            }
+        ],
     "auto_detect_interface": true,
     "final": "select",
     "rules": [
@@ -229,15 +250,19 @@
         "outbound": "select"
       },
       {
-        "geosite": "cn",
-        "geoip": [
-          "cn",
-          "private"
-        ],
+        "rule_set": "geoip-cn",
         "outbound": "direct"
       },
       {
-        "geosite": "geolocation-!cn",
+        "rule_set": "geosite-cn",
+        "outbound": "direct"
+      },
+      {
+      "ip_is_private": true,
+      "outbound": "direct"
+      },
+      {
+        "rule_set": "geosite-geolocation-!cn",
         "outbound": "select"
       }
     ]
