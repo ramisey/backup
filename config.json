@@ -1,7 +1,7 @@
 {
   "log": {
     "disabled": false,
-    "level": "warn",
+    "level": "info",
     "timestamp": true
   },
   "experimental": {
@@ -84,6 +84,7 @@
       "type": "mixed",
       "listen": "::",
       "listen_port": 1089
+
     }
   ],
   "outbounds": [
@@ -93,35 +94,20 @@
       "default": "auto",
       "outbounds": [
         "auto",
-        "vless-sb",
         "vmess-sb",
         "hy2-sb",
-        "tuic5-sb"
+        "tuic5-sb" ,
+        "vless-sb"
       ]
     },
-    {
-      "type": "vless",
-      "tag": "vless-sb",
-      "server": "six.earendal.win",
-      "server_port": 16589,
-      "uuid": "f8b8c801-3894-45a2-b1f6-d26a04189a70",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "six.earendal.win",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
-    },
+
 {
            "type": "vmess",
            "tag": "vmess-sb",
             "server":  "six.earendal.win",
-            "server_port": 2095,
+            "server_port": 6689,
             "security": "auto",
-            "uuid": "f8b8c801-3894-45a2-b1f6-d26a04189a70",
+            "uuid": "f8b8c801-3894-45a2-b1f6-d26a04189966",
             "tls": {
                 "enabled": true,
                 "server_name": "six.earendal.win",
@@ -137,17 +123,33 @@
                         "six.earendal.win"
                     ]
                 },
-                "path": "xyzabc",
+                "path": "xyzabctkmb",
                 "type": "ws"
             }
 
         },
+        {
+          "type": "vless",
+          "tag": "vless-sb",
+          "server": "six.earendal.win",
+          "server_port": 6589,
+          "uuid": "f8b8c801-3894-45a2-b1f6-d26a04189966",
+          "flow": "xtls-rprx-vision",
+          "tls": {
+            "enabled": true,
+            "server_name": "six.earendal.win",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        },      
     {
         "type": "hysteria2",
         "tag": "hy2-sb",
         "server": "six.earendal.win",
-        "server_port": 58378,
-        "password": "f8b8c801-3894-45a2-b1f6-d26a04189a70",
+        "server_port": 6789,
+        "password": "f8b8c801-3894-45a2-b1f6-d26a04189966",
         "tls": {
             "enabled": true,
             "server_name": "six.earendal.win",
@@ -161,9 +163,9 @@
             "type":"tuic",
             "tag": "tuic5-sb",
             "server": "six.earendal.win",
-            "server_port": 16680,
-            "uuid": "f8b8c801-3894-45a2-b1f6-d26a04189a70",
-            "password": "f8b8c801-3894-45a2-b1f6-d26a04189a70",
+            "server_port": 6889,
+            "uuid": "f8b8c801-3894-45a2-b1f6-d26a04189966",
+            "password": "f8b8c801-3894-45a2-b1f6-d26a04189966",
             "congestion_control": "bbr",
             "udp_relay_mode": "native",
             "udp_over_stream": false,
@@ -194,10 +196,11 @@
       "tag": "auto",
       "type": "urltest",
       "outbounds": [
-        "vless-sb",
+
         "vmess-sb",
         "hy2-sb",
-        "tuic5-sb"
+        "tuic5-sb" ,
+        "vless-sb"
       ],
       "url": "https://cp.cloudflare.com/generate_204",
       "interval": "1m",
