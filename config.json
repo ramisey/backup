@@ -147,22 +147,7 @@
             }
           }
         },      
-  ｛
-    tag: "cf-worker"
-    type: vless
-    server: hello.earendal.win
-    port: 443
-    uuid: 955e919f-b4c5-4997-be7a-5e82b81b8ee8
-    network: ws
-    tls: true
-    udp: false
-    sni: hello.earendal.win
-    client-fingerprint: chrome    
-    ws-opts:
-      path: /?ed=2048
-      headers:
-        Host: hello.earendal.win
-        ｝，
+  
     {
         "type": "hysteria2",
         "tag": "hy2-sb",
