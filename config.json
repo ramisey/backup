@@ -137,7 +137,6 @@
           "tag": "cf-worker",
            "server":  "hello.earendal.win",
            "server_port": 443,
-           "security": "auto",
            "uuid": "955e919f-b4c5-4997-be7a-5e82b81b8ee8",
            "tls": {
                "enabled": true,
