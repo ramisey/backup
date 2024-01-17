@@ -97,6 +97,7 @@
       "default": "auto",
       "outbounds": [
         "auto",
+        "cf-worker",
         "vmess-sb",
         "hy2-sb",
         "tuic5-sb" ,
@@ -131,6 +132,34 @@
             }
 
         },
+        {
+          "type": "vless",
+          "tag": "cf-worker",
+           "server":  "hello.earendal.win",
+           "server_port": 443,
+           "security": "auto",
+           "uuid": "955e919f-b4c5-4997-be7a-5e82b81b8ee8",
+           "tls": {
+               "enabled": true,
+               "server_name": "hello.earendal.win",
+               "insecure": false,
+               "utls": {
+                   "enabled": true,
+                   "fingerprint": "chrome"
+               }
+           },
+           "transport": {
+               "headers": {
+                   "Host": [
+                       "hello.earendal.win"
+                   ]
+               },
+               "path": "?ed=2048",
+               "type": "ws"
+           }
+
+       },
+
         {
           "type": "vless",
           "tag": "vless-sb",
@@ -200,7 +229,7 @@
       "tag": "auto",
       "type": "urltest",
       "outbounds": [
-
+        "cf-worker",
         "vmess-sb",
         "hy2-sb",
         "tuic5-sb" ,
