@@ -18,7 +18,7 @@ Windows Registry Editor Version 5.00
 
 说明：上述安装方法可保证扩展程序自动更新，适用于windows系统，linux下无需注册表操作。
 
-4、沉浸式翻译
+4、沉浸式翻译 [Immersive Translate](https://chromewebstore.google.com/detail/immersive-translate-trans/bpoadfkcbjbfhfodiogcnhhhpibjhbnh)
 
 5、沙拉查词 [Saladict](https://chromewebstore.google.com/detail/cdonnmffkdaoajfknoeeecmchibpmkmg)
 
