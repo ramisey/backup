@@ -14,10 +14,12 @@ Windows Registry Editor Version 5.00
 
 "2"="extension-id2"
 
-将"1"的值换成前述记下的ID的值，保存后双击c.reg文件将其加入注册表。最好在扩展程序管理页面启用插件。
+将"1"的值换成前述记下的ID的值，保存后双击c.reg文件将其加入注册表。最后在扩展程序管理页面启用插件。
 
 说明：上述安装方法可保证插件自动更新，使用windows系统，linux下无需注册表操作。
 
 4、沉浸式翻译
+
+5、沙拉查词 [Saladict](https://chromewebstore.google.com/detail/cdonnmffkdaoajfknoeeecmchibpmkmg)
 
 
