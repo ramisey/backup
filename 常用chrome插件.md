@@ -11,6 +11,7 @@
 Windows Registry Editor Version 5.00  
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionInstallAllowlist]  
 "1"="lkbebcjgcmobigpeffafkodonchffocl"
+
 "2"="extension-id2"
 
 将"1"的值换成前述记下的ID的值，保存后双击c.reg文件将其加入注册表。最好在扩展程序管理页面启用插件。
