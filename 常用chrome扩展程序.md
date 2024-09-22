@@ -20,7 +20,7 @@ Windows Registry Editor Version 5.00
 
 说明：上述安装方法可保证扩展程序自动更新，适用于windows系统，linux下无需注册表操作。
 
-还有一种方法：直接下载并解压zip文件，在chorome浏览器中打开扩展程序管理器，加载已解压扩展程序。下载bypass-paywalls-chrome-clean-master.zip文件，[地址在此](https://gitflic.ru/project/magnolia1234/bpc_uploads/blob/raw?file=bypass-paywalls-chrome-clean-master.zip)
+还有一种方法：直接下载并解压zip文件，在chorome浏览器中打开扩展程序管理器，加载已解压扩展程序。bypass-paywalls-chrome-clean-master.zip文件[地址在此](https://gitflic.ru/project/magnolia1234/bpc_uploads/blob/raw?file=bypass-paywalls-chrome-clean-master.zip)
 
 4、沉浸式翻译 [Immersive Translate](https://chromewebstore.google.com/detail/immersive-translate-trans/bpoadfkcbjbfhfodiogcnhhhpibjhbnh)
 
