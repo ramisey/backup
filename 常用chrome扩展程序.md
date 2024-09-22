@@ -6,7 +6,9 @@
 
 此扩展程序可以轻松绕过一些最有名的付费网站，如new york times、wall street journal、bloomberg、national geographic等网站。
 
-使用方法：打开[网站](https://gitflic.ru/project/magnolia1234/bpc_uploads),先鼠标点击后缀名为crx的文件，再右击文件下载按钮，另存为，保存即可。打开chorome浏览器，打开扩展程序管理器，启用开发者模式。将下载的crx文件拖入扩展程序管理页面，确定安装即可。同时，记下ID后面的一长段字符串。编辑注册表文件如c.reg，添加以下内容
+使用方法：[参考这里](https://github.com/bpc-clone/bypass-paywalls-chrome-clean/blob/master/README.md#installation)
+
+打开[网站](https://gitflic.ru/project/magnolia1234/bpc_uploads),先鼠标点击后缀名为crx的文件，再右击文件下载按钮，另存为，保存即可。打开chorome浏览器，打开扩展程序管理器，启用开发者模式。将下载的crx文件拖入扩展程序管理页面，确定安装即可。同时，记下ID后面的一长段字符串。编辑注册表文件如c.reg，添加以下内容
 
 Windows Registry Editor Version 5.00  
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionInstallAllowlist]  
