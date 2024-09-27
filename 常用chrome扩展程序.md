@@ -36,3 +36,8 @@ windows和office激活 来自[这里](https://github.com/massgravel/Microsoft-Ac
  ```
 irm https://get.activated.win | iex
 ```
+或
+ ```
+irm https://get.activated.win | iex
+```
+
