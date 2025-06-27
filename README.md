@@ -20,3 +20,7 @@ netbird    docker自行搭建
 
  export NETBIRD_DOMAIN=mydomain.com; curl -fsSL https://github.com/netbirdio/netbird/releases/latest/download/getting-started-with-zitadel.sh | bash
 
+ 安装Open WebUI with Bundled Ollama
+
+docker run -d -p 3000:8080 -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+
