@@ -1,0 +1,10 @@
+<service>
+  <id>sing-box</id>
+  <name>sing-box</name>
+  <description>This service runs sing-box continuous integration system.</description>
+  
+  <executable>D:\sing-box\sing-box.exe</executable>
+  <arguments>run  -c D:\sing-box\config.json</arguments>
+  <log mode="reset" />
+  <onfailure action="restart" />
+</service>
