@@ -8,3 +8,5 @@ style:
   horizontal: true
 
 #linux：fcitx5-rime框架下，默认横排
+
+候选词个数在default.yaml文件里修改
