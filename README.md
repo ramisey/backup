@@ -15,14 +15,6 @@ irm https://get.activated.win | iex
 修改mojave.xml文件，将其中的壁纸文件路径修改为指定文件夹壁纸路径
 在优化-外观-背景图像里选择mojave.xml文件即可。
 
-
-netbird    docker自行搭建
-
- ```
- export NETBIRD_DOMAIN=mydomain.com; curl -fsSL https://github.com/netbirdio/netbird/releases/latest/download/getting-started-with-zitadel.sh | bash
-```
-
-
  安装Open WebUI with Bundled Ollama
 
  ```
