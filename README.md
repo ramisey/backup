@@ -26,6 +26,23 @@ netbird    docker自行搭建
  安装Open WebUI with Bundled Ollama
 
  ```
-docker run -d -p 3000:8080 -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+services:
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    ports:
+      - "3001:8080"
+    environment:
+      - ENABLE_WEBSOCKET_SUPPORT=false
+      - ENABLE_MODEL_WHITELIST: "false"
+
+    volumes:
+      - ~/openwebui:/app/backend/data
+    restart: always
+    network_mode: bridge
+    expose:
+      - "8080"
+volumes:
+  open-webui:
 ```
 
